@@ -1,0 +1,10 @@
+[
+  {
+    "menuLink": "Home",
+    "linkTo": "/"
+  },
+  {
+    "menuLink": "Products",
+    "linkTo": "/"
+  }
+]

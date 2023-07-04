@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+span {
+  display: block;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid orangered;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: orangered;
+    color: #fff;
+  }
+}
+
+.header {
+  &__logo {
+    a {
+      font-size: 32px;
+      color: orangered;
+      font-weight: 600;
+    }
+  }
+  .navbar {
+    &__items {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      li {
+        a {
+          &.active {
+            color: orangered;
+          }
+        }
+      }
+    }
+    &__btns {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+    }
+  }
+  form {
+    &.search__form {
+      position: fixed;
+      top: 80px;
+      right: 50px;
+      background-color: #fff;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-50px);
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+.product {
+  padding: 120px 0;
+  background-color: #f7f7f7;
+
+  &__item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 30px;
+
+    &:hover {
+      h1 {
+        color: #ff4500;
+      }
+    }
+
+    &__image {
+      height: 250px;
+      margin: 0 auto;
+    }
+
+    &__text {
+      margin-top: 15px;
+      h1 {
+        font-size: 20px;
+        transition: hover 0.3s ease;
+      }
+      span {
+        &:first-of-type {
+          color: orangered;
+        }
+        &:last-of-type {
+          font-size: 45px;
+          color: #000;
+          font-weight: 600;
+          margin-bottom: 1rem;
+
+          &::before {
+            content: "NPR. ";
+            display: inline-block;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .navbar {
+      &__items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-width: 300px;
+        max-width: 350px;
+        height: 100vh;
+        background-color: #f7f7f7;
+        padding-top: 80px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+
+        &.active {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  .product {
+    &__item {
+      &__text {
+        h1 {
+          font-size: 18px;
+        }
+        span {
+          &:last-of-type {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
