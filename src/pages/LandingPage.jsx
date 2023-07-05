@@ -44,7 +44,7 @@ const LandingPage = () => {
             {product &&
               product.map((item, index) => (
                 <div className="col-lg-4  col-6" key={index}>
-                  <Product title={item.title} price={item.price} category={item.category} image={item.image} />
+                  <Product title={item.title} price={item.price} category={item.category} image={item.image} index={index} />
                 </div>
               ))}
           </div>
